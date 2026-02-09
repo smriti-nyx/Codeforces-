@@ -1,35 +1,55 @@
+#include<bits/stdc++.h>
+using namespace std ;
 
-#include <bits/stdc++.h>
-using namespace std;
-
-int main() {
-    ios::sync_with_stdio(false);
+int main(){
+     ios::sync_with_stdio(false);
     cin.tie(nullptr);
-
-    int n;
-    cin >> n;
-
-    vector<int> a(n);
-    for (int i = 0; i < n; i++) {
-        cin >> a[i];
-    }
-
-    vector<int> ones;
-    for (int i = 0; i < n; i++) {
-        if (a[i] == 1)
-            ones.push_back(i);
-    }
-
-    // edge case: fewer than 2 ones
-    if (ones.size() < 2) {
-        cout << 0;
-        return 0;
-    }
-
-    int maxDiff = 0;
-    for (int i = 1; i < ones.size(); i++) {
-        maxDiff = max(maxDiff, (ones[i] - ones[i - 1]-1));
-    }
-
-    cout << maxDiff;
+     long long t ;
+     cin >> t ;
+     while (t--)
+     {
+    
+    int n ;
+     cin>>n ; 
+     
+     vector <int> a(n);
+     for(int i = 0; i<n ; i++){
+         cin>>a[i];
+     }
+     int max_count = 0;
+     int current_count  = 0;
+     
+     int*ptr = a.data();
+     
+     
+     for(int i = 0; i< n ; i++){
+         if(*ptr == 0){
+             current_count++;
+             max_count = max(max_count , current_count);
+         }
+         else{
+             current_count = 0;
+         }
+         ptr ++;
+     }
+    cout<<max_count<<"\n";
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+     }
+    
+    return 0;
+    
 }
