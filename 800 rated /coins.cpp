@@ -26,6 +26,9 @@ int main() {
              condition_met = true;
             
          } 
+         else{
+            condition_met = false;
+         }
         
     
          
