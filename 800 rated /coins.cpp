@@ -20,8 +20,8 @@ int main() {                           // { main
         bool condition_met = false;
 
         // 2*x + k*y = n
-        for (int i = 0; i < n; i++) {          // { outer for
-            for (int j = 0; j < n; j++) {      // { inner for
+        for (int i = 0; i <= n; i++) {          // { outer for
+            for (int j = 0; j <= n; j++) {      // { inner for
                 if (2 * i + k * j == n || 2* i == n || k* j == n) {
                     condition_met = true;
                     break;
