@@ -27,7 +27,7 @@ int main() {
             
          } 
         
-         
+    
          
          if(condition_met = true ){
              cout<<"Yes \n"; } 
