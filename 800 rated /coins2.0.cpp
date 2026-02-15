@@ -34,10 +34,14 @@ return gcd(b ,  a%b  );
         else if  (k%2 != 0 && n%gcd(2,k) == 0){
             cout<<"YES \n";
         }
+        else if ( (n - k)%2 ==0){
+            cout<<"YES\n";
+        }
         
         else{
             cout<<"NO \n";
         }
+        
         
         
         
