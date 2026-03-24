@@ -74,6 +74,7 @@ if(allSame){
                   }
                   cout<<"\n";
                   
+                  
                   for(int x:c ){
                       cout<<x<<" ";
                   }
