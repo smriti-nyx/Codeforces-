@@ -86,3 +86,104 @@ if(allSame){
         
     }
 }
+
+
+
+
+
+
+
+#include<bits/stdc++.h>
+using namespace std;
+using ll = long long;
+
+int main(){
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+
+    long long t;
+    cin >> t;
+
+    while(t--){
+        int n;
+        cin >> n;
+        assert(n >= 2 && n <= 100);
+
+        vector<int> a(n);
+        for(int i = 0; i < a.size(); i++){
+            cin >> a[i];
+        }
+        
+        bool allSame = true;
+
+for(int i = 1; i < n; i++){
+    if(a[i] != a[0]){
+        allSame = false;
+        break;
+    }
+}
+
+if(allSame){
+    cout << -1 << "\n";
+    continue;
+}
+
+
+       
+          
+  //copying the og vector a and then sorting it 
+   vector<int> sorted = a ;
+ sort(sorted.begin() , sorted.end());
+         
+                  vector<int> b ,c ;
+                 
+                 for(int i = 0; i < n; i++){
+    bool goesToC = false;
+
+    for(int j = 0; j < n; j++){
+        if(i == j) continue;
+
+        // example condition 
+        if(a[i] % a[j] == 0){
+            goesToC = true;
+            break;
+        }
+    }
+
+    if(goesToC){
+        c.push_back(a[i]);
+    } else {
+        b.push_back(a[i]);
+    }
+}
+if(b.empty() || c.empty()){
+    cout << -1 << "\n";
+    continue;
+}
+
+
+   cout<<b.size()<<" "<<c.size()<<"\n";
+                  
+                  
+                  for(int x:b){
+                      cout<<x<<" ";
+                  }
+                  cout<<"\n";
+                  
+                  for(int x:c ){
+                      cout<<x<<" ";
+                  }
+        
+                  
+
+                  
+                  
+
+                  
+                  
+          
+    
+    
+        
+    }
+}
