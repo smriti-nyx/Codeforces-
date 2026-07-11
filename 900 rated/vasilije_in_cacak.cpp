@@ -20,7 +20,7 @@ int main(){
         if(min_sum <= x && x<= max_sum){
             result = "Yes";
         }else{
-            result = "No";
+             result = "No";
         }
         
         cout<<result<<"\n";
