@@ -21,27 +21,29 @@ int main(){
        
         
         
-        ll count = 1;
-        
-        vector<ll> a ; 
-       for(ll i = 0 ; i <s.size() ; i++){
-          // a.push_back(1);
-          if(s[i] == '>'){
-              count = count-1 ; 
-              a.push_back(count);
-          } else if (s[i]=='<'){
-              count += 1 ;
-              a.push_back(count);
-          }
-        
-       }
-        a.push_back(1);
-        
-      sort(a.begin(), a.end());
+        ll curl = 0 ; 
+        ll curr = 0 ;
+        ll bestl = 0 ; 
+        ll bestr  = 0;
 
- ll distinct = unique(a.begin(), a.end()) - a.begin();
+        for(ll i = 0 ; i <s.size() ; i++){
+            if(s[i] == '>'){
+                curl ++ ; 
+                bestl = max(bestl , curl);
+                curr = 0 ;
+            }else if(s[i] == '<'){
+                curr ++;
+                bestr = max(bestr , curr);
+                curl = 0 ;
+            }
+        }
+        
+      
+     
 
-   cout << distinct << "\n";
+ ll result = max(bestl , bestr) +1 ; 
+
+   cout << result << "\n";
        
      
        
