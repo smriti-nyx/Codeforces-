@@ -5,7 +5,7 @@ using ll = long long;
 int main(){
      ios::sync_with_stdio(false);
     cin.tie(nullptr);
-
+ 
     long long t;
     cin >> t;
  
@@ -17,23 +17,18 @@ int main(){
         for(ll i = 0 ; i<a.size(); i++){
             cin>>a[i];  }
         
-        
-       ll x = *min_element(a.begin() , a.end());
-       ll y = *max_element(a.begin() , a.end()) ; 
-       int i = max_element(a.begin(), a.end()) - a.begin();
-       
-       ll diff = 0 ; 
-       if(x == a[0]){
-           diff = y -x ;
-       }else if(x!= a[0]){
-           ll diff1 = y - a[i+1];
-           ll diff2 = y-a[0] ;
-           ll diff3 = y - a[i-1];
-           ll diff4 = y-x;
-           
-
-           diff = max({diff1 , diff2 , diff3 ,diff4});
-       }
+     ll diff = a[n-1] -a[0] ; 
+     for(ll i = 1; i <n ; i++){
+         diff = max(diff , a[i] - a[0]);
+     }
+     
+     for(ll i = 0 ; i <n-1 ; i++){
+         diff = max(diff , a[n-1] - a[i]);
+     }
+     
+     for(ll i = 0 ; i <n-1 ;   i++){
+         diff = max(diff , a[i] - a[i+1]);
+     }
       
    
    cout<<diff<<"\n";
