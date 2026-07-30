@@ -34,8 +34,7 @@ int main(){
    cout<<diff<<"\n";
 
        
-     
-       
+    
        
     }
 }
